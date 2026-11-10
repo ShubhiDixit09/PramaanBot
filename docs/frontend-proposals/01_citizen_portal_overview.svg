@@ -1,0 +1,132 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#f8fafc"/>
+  
+  <!-- Top Sovereign Tricolor Accent -->
+  <rect x="0" y="0" width="1440" height="4" fill="#FF9933"/>
+  <rect x="480" y="0" width="480" height="4" fill="#FFFFFF"/>
+  <rect x="960" y="0" width="480" height="4" fill="#138808"/>
+
+  <!-- Top Civic Ribbon -->
+  <rect x="0" y="4" width="1440" height="34" fill="#0b1e36"/>
+  <text x="36" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1" font-weight="600">भारत सरकार | GOVERNMENT OF INDIA</text>
+  <text x="250" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8">विधि और न्याय मंत्रालय | MINISTRY OF LAW AND JUSTICE</text>
+  <text x="1220" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1">Accessibility | English | हिन्दी</text>
+
+  <!-- Masthead -->
+  <rect x="0" y="38" width="1440" height="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Emblem placeholder circle -->
+  <circle cx="68" cy="78" r="24" fill="#0b2545"/>
+  <path d="M68 62 L74 72 L62 72 Z M68 76 L76 90 L60 90 Z" fill="#ffffff"/>
+  <circle cx="68" cy="80" r="4" fill="#FF9933"/>
+  <text x="104" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#0b2545">PramaanPortal</text>
+  <text x="260" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#64748b">|</text>
+  <text x="274" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#0b2545">प्रमाण पोर्टल</text>
+  <text x="104" y="92" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">National Citizen Legal Intelligence & Evidence Action System</text>
+
+  <!-- Masthead status badge -->
+  <rect x="1170" y="62" width="234" height="32" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="1186" cy="78" r="4" fill="#16a34a"/>
+  <text x="1198" y="82" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#334155">Official Public Digital Infrastructure</text>
+
+  <!-- Primary Navigation Bar (Navy Blue) -->
+  <rect x="0" y="118" width="1440" height="48" fill="#0b2545"/>
+
+  <!-- Nav items -->
+  <rect x="36" y="118" width="140" height="48" fill="#134074"/>
+  <text x="56" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Matters Overview</text>
+  <text x="216" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">File New Matter</text>
+  <text x="360" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Active Dossiers</text>
+  <text x="496" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Statutory Research</text>
+  <text x="656" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Action Checklists</text>
+  <text x="806" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Notice Builder</text>
+  <text x="946" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Verification Audit</text>
+
+  <!-- Breadcrumb bar -->
+  <rect x="0" y="166" width="1440" height="38" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="36" y="190" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">Portal Home  /  Citizen Workspace  /  Matter Register</text>
+
+  <!-- Page Header Banner -->
+  <rect x="36" y="222" width="1368" height="96" rx="6" fill="#0b2545"/>
+  <text x="68" y="260" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Citizen Legal Matter Register</text>
+  <text x="68" y="284" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Evidence-grounded statutory analysis, document verification, and formal notice drafting under Indian law.</text>
+  <!-- CTA Button inside banner -->
+  <rect x="1200" y="248" width="176" height="42" rx="4" fill="#FF9933"/>
+  <text x="1232" y="274" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b1e36">+ New Legal Matter</text>
+
+  <!-- Quick Metric Cards -->
+  <rect x="36" y="336" width="324" height="88" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="56" y="366" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">ACTIVE GRIEVANCES</text>
+  <text x="56" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#0b2545">03</text>
+  <text x="100" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#16a34a">In progress</text>
+
+  <rect x="384" y="336" width="324" height="88" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="404" y="366" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">INDEXED EVIDENCE FILES</text>
+  <text x="404" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#0b2545">08</text>
+  <text x="450" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#0284c7">Parsed agreements & receipts</text>
+
+  <rect x="732" y="336" width="324" height="88" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="752" y="366" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">DRAFTED STATUTORY NOTICES</text>
+  <text x="752" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#0b2545">02</text>
+  <text x="798" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">Ready for review</text>
+
+  <rect x="1080" y="336" width="324" height="88" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="1100" y="366" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">STATUTORY ACCURACY</text>
+  <text x="1100" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#15803d">94%</text>
+  <text x="1164" y="400" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">Citation verified</text>
+
+  <!-- Table Container -->
+  <rect x="36" y="444" width="1368" height="390" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="60" y="480" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0b2545">Your Registered Matters</text>
+
+  <!-- Table Header -->
+  <rect x="36" y="500" width="1368" height="40" fill="#f1f5f9"/>
+  <text x="60" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">CASE ID</text>
+  <text x="180" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">SUBJECT & SUMMARY</text>
+  <text x="560" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">JURISDICTION</text>
+  <text x="720" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">PRIMARY STATUTE</text>
+  <text x="960" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">EVIDENCE</text>
+  <text x="1100" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">STATUS</text>
+  <text x="1260" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#475569">ACTION</text>
+
+  <!-- Row 1 -->
+  <line x1="36" y1="588" x2="1404" y2="588" stroke="#e2e8f0"/>
+  <text x="60" y="562" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0b2545">PRM-2026-081</text>
+  <text x="180" y="556" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Unlawful deduction of ₹25,000 security deposit</text>
+  <text x="180" y="574" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">Tenant vacated premise; landlord withheld deposit without breakdown</text>
+  <text x="560" y="562" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155">NCT of Delhi</text>
+  <text x="720" y="562" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#0369a1">Transfer of Property Act, S. 108(m)</text>
+  <rect x="960" y="546" width="100" height="24" rx="12" fill="#e0f2fe"/>
+  <text x="974" y="562" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">3 Files Parsed</text>
+  <rect x="1100" y="546" width="90" height="24" rx="12" fill="#dcfce7"/>
+  <text x="1120" y="562" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#15803d">Active</text>
+  <rect x="1250" y="546" width="110" height="26" rx="4" fill="#0b2545"/>
+  <text x="1268" y="563" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Open Dossier</text>
+
+  <!-- Row 2 -->
+  <line x1="36" y1="652" x2="1404" y2="652" stroke="#e2e8f0"/>
+  <text x="60" y="626" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0b2545">PRM-2026-074</text>
+  <text x="180" y="620" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">E-commerce defective laptop refund refusal</text>
+  <text x="180" y="638" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">Seller rejected return window despite DOA certificate within 48h</text>
+  <text x="560" y="626" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155">Uttar Pradesh</text>
+  <text x="720" y="626" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#0369a1">Consumer Protection Act, S. 35</text>
+  <rect x="960" y="610" width="100" height="24" rx="12" fill="#e0f2fe"/>
+  <text x="974" y="626" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">2 Files Parsed</text>
+  <rect x="1100" y="610" width="90" height="24" rx="12" fill="#fef3c7"/>
+  <text x="1114" y="626" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#92400e">Reviewing</text>
+  <rect x="1250" y="610" width="110" height="26" rx="4" fill="#0b2545"/>
+  <text x="1268" y="627" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Open Dossier</text>
+
+  <!-- Row 3 -->
+  <line x1="36" y1="716" x2="1404" y2="716" stroke="#e2e8f0"/>
+  <text x="60" y="690" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0b2545">PRM-2026-069</text>
+  <text x="180" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#0f172a">Cyber financial fraud - unauthorized UPI debit</text>
+  <text x="180" y="702" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">₹42,000 deducted through phishing apk; bank dispute pending</text>
+  <text x="560" y="690" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#334155">Karnataka</text>
+  <text x="720" y="690" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#0369a1">IT Act, S. 66D / BNS S. 318(4)</text>
+  <rect x="960" y="674" width="100" height="24" rx="12" fill="#e0f2fe"/>
+  <text x="974" y="690" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">4 Files Parsed</text>
+  <rect x="1100" y="674" width="90" height="24" rx="12" fill="#dcfce7"/>
+  <text x="1120" y="690" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#15803d">Active</text>
+  <rect x="1250" y="674" width="110" height="26" rx="4" fill="#0b2545"/>
+  <text x="1268" y="691" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">Open Dossier</text>
+</svg>

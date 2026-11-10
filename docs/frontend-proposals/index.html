@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PramaanPortal — Government of India UI/UX Proposals</title>
+  <style>
+    :root {
+      --primary: #0b2545;
+      --primary-light: #134074;
+      --saffron: #FF9933;
+      --green: #138808;
+      --slate: #0f172a;
+      --muted: #64748b;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: var(--bg);
+      color: var(--slate);
+      line-height: 1.5;
+    }
+    .civic-ribbon {
+      height: 4px;
+      background: linear-gradient(90deg, #FF9933 33.3%, #ffffff 33.3% 66.6%, #138808 66.6%);
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 2.5rem 2rem;
+      border-bottom: 4px solid var(--saffron);
+    }
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .header-titles h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .header-titles p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      margin-top: 0.4rem;
+    }
+    .badge {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+    main {
+      padding: 3rem 0;
+    }
+    .intro-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.75rem 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    .intro-card h2 {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+    }
+    .principles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.25rem;
+    }
+    .principle {
+      background: #f1f5f9;
+      padding: 1.25rem;
+      border-radius: 6px;
+      border-left: 4px solid var(--primary);
+    }
+    .principle h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      margin-bottom: 0.4rem;
+    }
+    .principle p {
+      font-size: 0.9rem;
+      color: #334155;
+    }
+    .mockup-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+    .mockup-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .mockup-info h2 {
+      font-size: 1.5rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .mockup-info p {
+      color: var(--muted);
+      margin-top: 0.25rem;
+      font-size: 0.95rem;
+    }
+    .btn-view {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-view:hover {
+      background: var(--primary-light);
+    }
+    .mockup-image-wrap {
+      padding: 1rem;
+      background: #e2e8f0;
+      text-align: center;
+    }
+    .mockup-image-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      display: block;
+      margin: 0 auto;
+    }
+    footer {
+      text-align: center;
+      padding: 3rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="civic-ribbon"></div>
+  <header>
+    <div class="container header-content">
+      <div class="header-titles">
+        <h1>PramaanPortal — Government of India UI/UX Proposals</h1>
+        <p>National Citizen Legal Intelligence & Evidence Action System (DPI Architecture)</p>
+      </div>
+      <div class="badge">
+        5 High-Resolution Design Proposals
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="intro-card">
+      <h2>National Digital Public Infrastructure (DPI) Design Standards</h2>
+      <p>These 5 proposals replace prototype and AI-generated styling with the authoritative standards of Indian government portals (such as eCourts, Digital India, DigiLocker, and NALSA).</p>
+      <div class="principles-grid">
+        <div class="principle">
+          <h3>Authoritative Civic Palette</h3>
+          <p>Deep Navy Blue (#0b2545), Ashoka Royal Blue (#134074), clean white (#ffffff), and subtle saffron accent accents. Replaces muddy brown tones.</p>
+        </div>
+        <div class="principle">
+          <h3>Zero Unnecessary Emojis</h3>
+          <p>Strictly clean vector iconography and typography. No emojis or AI glitter that detract from formal legal authority.</p>
+        </div>
+        <div class="principle">
+          <h3>Structured Citizen Tables</h3>
+          <p>Clear, responsive data registers for active matters, jurisdiction filters, indexed evidence tracking, and statutory outcomes.</p>
+        </div>
+        <div class="principle">
+          <h3>A4 Legal Notice Standard</h3>
+          <p>Institutional legal letterhead views for speed-post / registered AD notice drafting under Section 106/108 of Transfer of Property Act, BNS, or CPA.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mockup 1 -->
+    <div class="mockup-item">
+      <div class="mockup-header">
+        <div class="mockup-info">
+          <h2>Proposal 01: Citizen Legal Matter Register & Executive Dashboard</h2>
+          <p>A clean government portal overview showing citizen grievances, filing statuses, parsed evidence counts, and statutory compliance metrics.</p>
+        </div>
+        <a href="01_citizen_portal_overview.png" target="_blank" class="btn-view">View Full High-Res PNG (3000x1875)</a>
+      </div>
+      <div class="mockup-image-wrap">
+        <img src="01_citizen_portal_overview.png" alt="Citizen Legal Matter Register Dashboard" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mockup 2 -->
+    <div class="mockup-item">
+      <div class="mockup-header">
+        <div class="mockup-info">
+          <h2>Proposal 02: Citizen Grievance Intake & Evidentiary Ingestion</h2>
+          <p>4-step linear intake stepper with institutional form fields and a real-time evidence parsing dropzone extracting key facts from PDFs, scans, and receipts.</p>
+        </div>
+        <a href="02_grievance_intake_and_evidence.png" target="_blank" class="btn-view">View Full High-Res PNG (3000x1875)</a>
+      </div>
+      <div class="mockup-image-wrap">
+        <img src="02_grievance_intake_and_evidence.png" alt="Grievance Intake and Evidence Ingestion" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mockup 3 -->
+    <div class="mockup-item">
+      <div class="mockup-header">
+        <div class="mockup-info">
+          <h2>Proposal 03: Split Case Dossier & Statutory Grounding Workspace</h2>
+          <p>Two-column judicial workspace: Verified statement of facts and indexed documentary evidence on the left; statutory provisions (TPA, Contract Act, BNS) and actionable legal steps on the right.</p>
+        </div>
+        <a href="03_case_dossier_and_analysis.png" target="_blank" class="btn-view">View Full High-Res PNG (3000x1875)</a>
+      </div>
+      <div class="mockup-image-wrap">
+        <img src="03_case_dossier_and_analysis.png" alt="Case Dossier and Analysis Workspace" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mockup 4 -->
+    <div class="mockup-item">
+      <div class="mockup-header">
+        <div class="mockup-info">
+          <h2>Proposal 04: Formal Statutory Legal Notice Builder</h2>
+          <p>Institutional A4 legal notice letterhead viewer with fact-bound numbered legal grounds, statutory deadlines (15-day notice), advocate/citizen signature block, and PDF/Print export.</p>
+        </div>
+        <a href="04_statutory_notice_builder.png" target="_blank" class="btn-view">View Full High-Res PNG (3000x1875)</a>
+      </div>
+      <div class="mockup-image-wrap">
+        <img src="04_statutory_notice_builder.png" alt="Statutory Legal Notice Builder" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Mockup 5 -->
+    <div class="mockup-item">
+      <div class="mockup-header">
+        <div class="mockup-info">
+          <h2>Proposal 05: Central Statutory Archive & Gazette Research</h2>
+          <p>Unified search across Indian central acts (BNS, BNSS, Consumer Protection, Motor Vehicles, Labour laws) with category filter chips and direct official India Code Gazette citations.</p>
+        </div>
+        <a href="05_statutory_knowledge_base.png" target="_blank" class="btn-view">View Full High-Res PNG (3000x1875)</a>
+      </div>
+      <div class="mockup-image-wrap">
+        <img src="05_statutory_knowledge_base.png" alt="Statutory Knowledge Base" loading="lazy">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>PramaanPortal Design Proposals · National Informatics Centre & eCourts Aesthetic Standards</p>
+  </footer>
+</body>
+</html>

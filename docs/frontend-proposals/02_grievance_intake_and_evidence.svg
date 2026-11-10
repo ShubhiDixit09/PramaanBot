@@ -1,0 +1,121 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#f8fafc"/>
+  
+  <!-- Top Sovereign Tricolor Accent -->
+  <rect x="0" y="0" width="1440" height="4" fill="#FF9933"/>
+  <rect x="480" y="0" width="480" height="4" fill="#FFFFFF"/>
+  <rect x="960" y="0" width="480" height="4" fill="#138808"/>
+
+  <!-- Top Civic Ribbon -->
+  <rect x="0" y="4" width="1440" height="34" fill="#0b1e36"/>
+  <text x="36" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1" font-weight="600">भारत सरकार | GOVERNMENT OF INDIA</text>
+  <text x="250" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8">विधि और न्याय मंत्रालय | MINISTRY OF LAW AND JUSTICE</text>
+  <text x="1220" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1">Accessibility | English | हिन्दी</text>
+
+  <!-- Masthead -->
+  <rect x="0" y="38" width="1440" height="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Emblem placeholder circle -->
+  <circle cx="68" cy="78" r="24" fill="#0b2545"/>
+  <path d="M68 62 L74 72 L62 72 Z M68 76 L76 90 L60 90 Z" fill="#ffffff"/>
+  <circle cx="68" cy="80" r="4" fill="#FF9933"/>
+  <text x="104" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#0b2545">PramaanPortal</text>
+  <text x="260" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#64748b">|</text>
+  <text x="274" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#0b2545">प्रमाण पोर्टल</text>
+  <text x="104" y="92" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">National Citizen Legal Intelligence & Evidence Action System</text>
+
+  <!-- Masthead status badge -->
+  <rect x="1170" y="62" width="234" height="32" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="1186" cy="78" r="4" fill="#16a34a"/>
+  <text x="1198" y="82" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#334155">Official Public Digital Infrastructure</text>
+
+  <!-- Primary Navigation Bar (Navy Blue) -->
+  <rect x="0" y="118" width="1440" height="48" fill="#0b2545"/>
+
+  <!-- Nav items -->
+  <text x="56" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Matters Overview</text>
+  <rect x="196" y="118" width="140" height="48" fill="#134074"/>
+  <text x="216" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">File New Matter</text>
+  <text x="360" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Active Dossiers</text>
+  <text x="496" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Statutory Research</text>
+  <text x="656" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Action Checklists</text>
+  <text x="806" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Notice Builder</text>
+
+  <!-- Stepper Bar -->
+  <rect x="0" y="166" width="1440" height="64" fill="#ffffff" stroke="#e2e8f0"/>
+  <circle cx="200" cy="198" r="14" fill="#0b2545"/>
+  <text x="196" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="700">1</text>
+  <text x="224" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2545">Complainant & Matter</text>
+
+  <line x1="380" y1="198" x2="480" y2="198" stroke="#0b2545" stroke-width="2"/>
+  <circle cx="510" cy="198" r="14" fill="#0b2545"/>
+  <text x="506" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#ffffff" font-weight="700">2</text>
+  <text x="534" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2545">Evidence Ingestion</text>
+
+  <line x1="680" y1="198" x2="780" y2="198" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="810" cy="198" r="14" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="806" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b" font-weight="700">3</text>
+  <text x="834" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#64748b">Statutory Matching</text>
+
+  <line x1="970" y1="198" x2="1070" y2="198" stroke="#cbd5e1" stroke-width="2"/>
+  <circle cx="1100" cy="198" r="14" fill="#f1f5f9" stroke="#94a3b8"/>
+  <text x="1096" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b" font-weight="700">4</text>
+  <text x="1124" y="202" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#64748b">Review & Action Plan</text>
+
+  <!-- Intake Layout -->
+  <rect x="36" y="254" width="760" height="580" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="64" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#0b2545">Record Your Grievance</text>
+  <text x="64" y="312" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">Explain what happened in plain English, Hindi, or Hinglish. Statutory references will be identified automatically.</text>
+
+  <!-- Form Fields -->
+  <text x="64" y="356" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#334155">MATTER TITLE *</text>
+  <rect x="64" y="366" width="704" height="42" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="80" y="392" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#0f172a">Landlord refusing to refund ₹25,000 security deposit after flat handover</text>
+
+  <text x="64" y="436" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#334155">JURISDICTION / STATE *</text>
+  <rect x="64" y="446" width="340" height="42" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="80" y="472" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#0f172a">NCT of Delhi</text>
+
+  <text x="428" y="436" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#334155">ESTIMATED DISPUTED SUM (INR)</text>
+  <rect x="428" y="446" width="340" height="42" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="444" y="472" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#0f172a">₹ 25,000</text>
+
+  <text x="64" y="516" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#334155">DETAILED CHRONOLOGICAL STATEMENT *</text>
+  <rect x="64" y="526" width="704" height="220" rx="4" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="80" y="556" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b" width="670">I resided at Flat 402, Rohini Sector 15 under a 11-month lease from 1 July 2025.</text>
+  <text x="80" y="580" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b">A security deposit of ₹25,000 was paid via UPI on 01/07/2025.</text>
+  <text x="80" y="604" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b">I vacated the premises on 30 June 2026 after handing over the physical keys.</text>
+  <text x="80" y="628" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b">The landlord refuses to return the deposit citing arbitrary painting and deep cleaning,</text>
+  <text x="80" y="652" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b">without providing any contractor bills, invoices, or photographic proof of damages.</text>
+
+  <rect x="64" y="770" width="160" height="42" rx="4" fill="#0b2545"/>
+  <text x="96" y="796" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Save & Proceed  →</text>
+
+  <!-- Evidence Side Ingestion Panel -->
+  <rect x="824" y="254" width="580" height="580" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="852" y="290" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#0b2545">Evidentiary Document Ingestion</text>
+  <text x="852" y="312" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">Upload rental agreements, payment receipts, bank logs, notices or FIR copies.</text>
+
+  <!-- Upload Dropzone -->
+  <rect x="852" y="336" width="524" height="120" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="4 4"/>
+  <text x="1010" y="390" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="600" fill="#0b2545">Upload Supporting Evidence</text>
+  <text x="960" y="412" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">Drag and drop PDF, PNG, JPG files (Max 10MB per file)</text>
+
+  <!-- Parsed Files List -->
+  <text x="852" y="486" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#334155">INDEXED EVIDENCE (2 FILES)</text>
+
+  <!-- File 1 Card -->
+  <rect x="852" y="504" width="524" height="96" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="872" y="530" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2545">Rental_Agreement_Signed.pdf</text>
+  <rect x="1220" y="516" width="136" height="20" rx="10" fill="#dcfce7"/>
+  <text x="1232" y="530" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600" fill="#15803d">PDF Text Extracted</text>
+  <text x="872" y="552" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#334155">Doc Type: Rent Agreement / Lease Deed</text>
+  <text x="872" y="572" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">Key Facts: ₹25,000 security deposit clause 4; normal wear & tear excluded under clause 8.</text>
+
+  <!-- File 2 Card -->
+  <rect x="852" y="616" width="524" height="96" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="872" y="642" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b2545">UPI_Payment_Proof_HDFC.png</text>
+  <rect x="1220" y="628" width="136" height="20" rx="10" fill="#e0f2fe"/>
+  <text x="1242" y="642" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600" fill="#0369a1">Receipt Indexed</text>
+  <text x="872" y="664" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#334155">Doc Type: Payment Receipt / Transaction Proof</text>
+  <text x="872" y="684" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#64748b">Key Facts: Amount ₹25,000 paid to Landlord account; UTR Ref: 518293019283 on 01/07/2025.</text>
+</svg>

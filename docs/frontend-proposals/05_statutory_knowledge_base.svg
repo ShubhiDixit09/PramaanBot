@@ -1,0 +1,117 @@
+<svg width="1440" height="900" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1440" height="900" fill="#f8fafc"/>
+  
+  <!-- Top Sovereign Tricolor Accent -->
+  <rect x="0" y="0" width="1440" height="4" fill="#FF9933"/>
+  <rect x="480" y="0" width="480" height="4" fill="#FFFFFF"/>
+  <rect x="960" y="0" width="480" height="4" fill="#138808"/>
+
+  <!-- Top Civic Ribbon -->
+  <rect x="0" y="4" width="1440" height="34" fill="#0b1e36"/>
+  <text x="36" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1" font-weight="600">भारत सरकार | GOVERNMENT OF INDIA</text>
+  <text x="250" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#94a3b8">विधि और न्याय मंत्रालय | MINISTRY OF LAW AND JUSTICE</text>
+  <text x="1220" y="26" font-family="'Segoe UI', Arial, sans-serif" font-size="11" fill="#cbd5e1">Accessibility | English | हिन्दी</text>
+
+  <!-- Masthead -->
+  <rect x="0" y="38" width="1440" height="80" fill="#ffffff" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- Emblem placeholder circle -->
+  <circle cx="68" cy="78" r="24" fill="#0b2545"/>
+  <path d="M68 62 L74 72 L62 72 Z M68 76 L76 90 L60 90 Z" fill="#ffffff"/>
+  <circle cx="68" cy="80" r="4" fill="#FF9933"/>
+  <text x="104" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#0b2545">PramaanPortal</text>
+  <text x="260" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#64748b">|</text>
+  <text x="274" y="72" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="600" fill="#0b2545">प्रमाण पोर्टल</text>
+  <text x="104" y="92" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#64748b">National Citizen Legal Intelligence & Evidence Action System</text>
+
+  <!-- Masthead status badge -->
+  <rect x="1170" y="62" width="234" height="32" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>
+  <circle cx="1186" cy="78" r="4" fill="#16a34a"/>
+  <text x="1198" y="82" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#334155">Official Public Digital Infrastructure</text>
+
+  <!-- Primary Navigation Bar (Navy Blue) -->
+  <rect x="0" y="118" width="1440" height="48" fill="#0b2545"/>
+
+  <!-- Nav items -->
+  <text x="56" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Matters Overview</text>
+  <text x="216" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">File New Matter</text>
+  <text x="360" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Active Dossiers</text>
+  <rect x="476" y="118" width="160" height="48" fill="#134074"/>
+  <text x="496" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">Statutory Research</text>
+  <text x="656" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Action Checklists</text>
+  <text x="806" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Notice Builder</text>
+
+  <!-- Big Search Header -->
+  <rect x="36" y="186" width="1368" height="150" rx="6" fill="#0b2545"/>
+  <text x="68" y="226" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Indian Central Statutory Archive &amp; Case Matcher</text>
+  <text x="68" y="250" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#cbd5e1">Search authenticated provisions across BNS, BNSS, Consumer Protection Act, Transfer of Property Act &amp; Motor Vehicles Act.</text>
+
+  <!-- Search Input Bar -->
+  <rect x="68" y="272" width="1120" height="46" rx="4" fill="#ffffff"/>
+  <text x="88" y="300" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#1e293b">landlord deducted security deposit painting wear and tear</text>
+  <rect x="1200" y="272" width="176" height="46" rx="4" fill="#FF9933"/>
+  <text x="1246" y="300" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0b1e36">Search Corpus</text>
+
+  <!-- Filter Category Chips -->
+  <rect x="36" y="356" width="110" height="32" rx="16" fill="#0b2545"/>
+  <text x="56" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="600" fill="#ffffff">All Provisions</text>
+
+  <rect x="156" y="356" width="160" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="176" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Consumer Protection</text>
+
+  <rect x="326" y="356" width="160" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="346" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Tenancy &amp; Rent Law</text>
+
+  <rect x="496" y="356" width="160" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="516" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Criminal (BNS / BNSS)</text>
+
+  <rect x="666" y="356" width="160" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="686" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Cyber &amp; Financial Fraud</text>
+
+  <rect x="836" y="356" width="160" height="32" rx="16" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="856" y="376" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#334155">Motor Vehicles / Traffic</text>
+
+  <!-- Cards Grid -->
+  <!-- Card 1 -->
+  <rect x="36" y="410" width="670" height="210" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="56" y="430" width="110" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="68" y="445" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#0369a1">TENANCY LAW</text>
+  <rect x="580" y="430" width="106" height="22" rx="4" fill="#dcfce7"/>
+  <text x="592" y="445" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#15803d">98% Match Rank</text>
+  <text x="56" y="474" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0b2545">Transfer of Property Act, 1882 — Section 108(m)</text>
+  <text x="56" y="496" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Maintenance of property and reasonable wear and tear</text>
+  <text x="56" y="524" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#475569">The lessee is bound to keep and restore the property in as good condition as it was when possessed, subject to reasonable wear and tear or irresistible force. Landlord cannot make arbitrary repainting deductions.</text>
+  <line x1="56" y1="564" x2="686" y2="564" stroke="#f1f5f9"/>
+  <text x="56" y="590" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">Official Gazette: indiacode.nic.in/bitstream/123456789/2338/1/A1882-04.pdf</text>
+
+  <!-- Card 2 -->
+  <rect x="734" y="410" width="670" height="210" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="754" y="430" width="110" height="22" rx="4" fill="#fef3c7"/>
+  <text x="766" y="445" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#92400e">CONTRACT LAW</text>
+  <rect x="1278" y="430" width="106" height="22" rx="4" fill="#dcfce7"/>
+  <text x="1290" y="445" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#15803d">92% Match Rank</text>
+  <text x="754" y="474" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0b2545">Indian Contract Act, 1872 — Section 73</text>
+  <text x="754" y="496" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Compensation for loss or damage caused by contractual breach</text>
+  <text x="754" y="524" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#475569">When a contract is broken, the party suffering breach is entitled to compensation for any direct loss or damage naturally arising in the usual course of things. Unilateral deposit forfeiture is actionable.</text>
+  <line x1="754" y1="564" x2="1384" y2="564" stroke="#f1f5f9"/>
+  <text x="754" y="590" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">Official Gazette: indiacode.nic.in/bitstream/123456789/2187/1/A1872-09.pdf</text>
+
+  <!-- Card 3 -->
+  <rect x="36" y="640" width="670" height="210" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="56" y="660" width="110" height="22" rx="4" fill="#dcfce7"/>
+  <text x="68" y="675" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#15803d">CONSUMER LAW</text>
+  <text x="56" y="704" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0b2545">Consumer Protection Act, 2019 — Section 35</text>
+  <text x="56" y="726" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Manner in which consumer complaint shall be filed</text>
+  <text x="56" y="754" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#475569">A consumer complaint may be filed with the District Commission by an individual, registered association, or groups of consumers. Jurisdiction applies where complainant resides or where opposite party works.</text>
+  <line x1="56" y1="794" x2="686" y2="794" stroke="#f1f5f9"/>
+  <text x="56" y="820" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">Official Gazette: indiacode.nic.in/bitstream/123456789/15256/5/A2019-35.pdf</text>
+
+  <!-- Card 4 -->
+  <rect x="734" y="640" width="670" height="210" rx="6" fill="#ffffff" stroke="#e2e8f0"/>
+  <rect x="754" y="660" width="110" height="22" rx="4" fill="#ede9fe"/>
+  <text x="766" y="675" font-family="'Segoe UI', Arial, sans-serif" font-size="10" font-weight="700" fill="#6d28d9">CRIMINAL LAW</text>
+  <text x="754" y="704" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#0b2545">Bharatiya Nagarik Suraksha Sanhita, 2023 — Section 173</text>
+  <text x="754" y="726" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="600" fill="#334155">Registration of First Information Report (Zero FIR / e-FIR)</text>
+  <text x="754" y="754" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#475569">Information relating to cognizable offences may be reported orally or electronically (e-FIR). Mandatory registration of Zero FIR irrespective of police station territorial jurisdiction.</text>
+  <line x1="754" y1="794" x2="1384" y2="794" stroke="#f1f5f9"/>
+  <text x="754" y="820" font-family="'Segoe UI', Arial, sans-serif" font-size="11" font-weight="600" fill="#0369a1">Official Gazette: indiacode.nic.in/bitstream/123456789/20099/1/eng.pdf</text>
+</svg>

@@ -295,18 +295,18 @@ export default function Workspace() {
                       {(meta.amounts?.length > 0 || meta.dates?.length > 0 || meta.parties?.length > 0) && (
                         <div style={{display:'flex',flexWrap:'wrap',gap:8,marginTop:8,paddingTop:8,borderTop:'1px dashed #cbd5e1'}}>
                           {meta.amounts?.map((amt: string, idx: number) => (
-                            <span key={`amt-${idx}`} style={{background:'#fef3c7',color:'#92400e',padding:'2px 8px',borderRadius:6,fontSize:12,fontWeight:500}}>
-                              💰 {amt}
+                            <span key={`amt-${idx}`} style={{background:'#fef3c7',color:'#92400e',padding:'2px 8px',borderRadius:4,fontSize:11,fontWeight:600}}>
+                              Amount: {amt}
                             </span>
                           ))}
                           {meta.dates?.map((dt: string, idx: number) => (
-                            <span key={`dt-${idx}`} style={{background:'#ede9fe',color:'#5b21b6',padding:'2px 8px',borderRadius:6,fontSize:12}}>
-                              📅 {dt}
+                            <span key={`dt-${idx}`} style={{background:'#ede9fe',color:'#5b21b6',padding:'2px 8px',borderRadius:4,fontSize:11}}>
+                              Date: {dt}
                             </span>
                           ))}
                           {meta.parties?.map((pty: string, idx: number) => (
-                            <span key={`pty-${idx}`} style={{background:'#f1f5f9',color:'#475569',padding:'2px 8px',borderRadius:6,fontSize:12}}>
-                              👥 {pty}
+                            <span key={`pty-${idx}`} style={{background:'#f1f5f9',color:'#475569',padding:'2px 8px',borderRadius:4,fontSize:11}}>
+                              Party: {pty}
                             </span>
                           ))}
                         </div>
