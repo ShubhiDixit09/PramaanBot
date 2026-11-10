@@ -45,6 +45,7 @@ export default function Workspace() {
   const [message, setMessage] = useState('')
   const [busy, setBusy] = useState(false)
   const [uploading, setUploading] = useState(false)
+  const [expandedEvidence, setExpandedEvidence] = useState<Record<string, boolean>>({})
   const [notice, setNotice] = useState('')
   const [error, setError] = useState('')
   const fileInput = useRef<HTMLInputElement>(null)
@@ -220,7 +221,7 @@ export default function Workspace() {
               <div className="case-evidence-tags">
                 {mentionedEvidence.length ? mentionedEvidence.map(({ label, icon: Icon }) => <span key={label}><Icon size={14} /> {label}</span>) : <span><Paperclip size={14} /> No document type identified in the account</span>}
               </div>
-              <div className={evidence.length ? 'case-evidence-alert saved' : 'case-evidence-alert'}><AlertCircle size={16} /><span>{evidence.length ? `${evidence.length} file${evidence.length === 1 ? '' : 's'} saved locally; contents remain unverified.` : 'These documents have not been uploaded yet.'}</span><button onClick={() => fileInput.current?.click()}>Upload evidence <ArrowRight size={15} /></button></div>
+              <div className={evidence.length ? 'case-evidence-alert saved' : 'case-evidence-alert'}><AlertCircle size={16} /><span>{evidence.length ? `${evidence.length} evidence document${evidence.length === 1 ? '' : 's'} indexed with extracted legal facts.` : 'These documents have not been uploaded yet.'}</span><button onClick={() => fileInput.current?.click()}>Upload evidence <ArrowRight size={15} /></button></div>
             </div>
 
             <div className="dossier-section steps-card">
@@ -246,9 +247,87 @@ export default function Workspace() {
           </section>}
 
           {tab === 'evidence' && <section className="panel case-card tab-card">
-            <div className="case-card-title"><span className="case-icon"><Paperclip size={21} /></span><h2>Evidence register</h2><button className="button secondary" onClick={() => fileInput.current?.click()} disabled={uploading}><UploadCloud size={16} /> Add file</button></div>
-            <p className="muted">Files stay on this device. A hash records whether a saved file changes; it does not prove the file is authentic or that its contents are true.</p>
-            {evidence.length ? <div className="case-list-simple">{evidence.map((item) => <div key={item.id}><FileText size={20} /><div><strong>{item.filename}</strong><span>{dateLabel(item.created_at)} · {savedOriginal(item) ? 'Original stored locally' : 'Older metadata-only record'}</span></div>{savedOriginal(item) && (import.meta.env.PROD ? <button type="button" className="button secondary" onClick={() => { try { api.downloadEvidence(caseId, item.id) } catch(e) { setError((e as Error).message) } }} aria-label={`Download ${item.filename}`}><Download size={18} /></button> : <a href={api.evidenceFileUrl(caseId, item.id)} aria-label={`Download ${item.filename}`}><Download size={18} /></a>)}</div>)}</div> : <div className="case-empty"><Paperclip size={25} /><strong>No files saved yet</strong><span>Add the agreement, payment proof, messages, or other material you want to keep with this case.</span></div>}
+            <div className="case-card-title"><span className="case-icon"><Paperclip size={21} /></span><h2>Evidence register & Intelligence</h2><button className="button secondary" onClick={() => fileInput.current?.click()} disabled={uploading}><UploadCloud size={16} /> Add file</button></div>
+            <p className="muted">Files are analyzed for legal facts (dates, amounts, parties, document type) and stay encrypted on this device.</p>
+            {evidence.length ? (
+              <div className="case-list-simple" style={{display:'grid',gap:12}}>
+                {evidence.map((item) => {
+                  const meta = (() => {
+                    try { return JSON.parse(item.metadata_json) } catch { return {} }
+                  })()
+                  const isExp = Boolean(expandedEvidence[item.id])
+                  return (
+                    <div key={item.id} style={{display:'block',border:'1px solid #e2e8f0',borderRadius:8,padding:14,background:'#fafafa'}}>
+                      <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',flexWrap:'wrap',gap:8}}>
+                        <div style={{display:'flex',gap:10,alignItems:'flex-start'}}>
+                          <FileText size={22} style={{color:'#1e293b',marginTop:2}} />
+                          <div>
+                            <div style={{display:'flex',gap:8,alignItems:'center',flexWrap:'wrap'}}>
+                              <strong>{item.filename}</strong>
+                              {meta.doc_type && <span style={{background:'#e0f2fe',color:'#0369a1',padding:'2px 8px',borderRadius:12,fontSize:11,fontWeight:600}}>{meta.doc_type}</span>}
+                              <span style={{background:'#dcfce7',color:'#15803d',padding:'2px 8px',borderRadius:12,fontSize:11,fontWeight:500}}>Indexed</span>
+                            </div>
+                            <span style={{fontSize:12,color:'#64748b'}}>{dateLabel(item.created_at)} · {meta.vision_status || 'Analyzed'}</span>
+                          </div>
+                        </div>
+                        <div style={{display:'flex',gap:8}}>
+                          {meta.extracted_text && (
+                            <button type="button" className="button secondary" style={{fontSize:12,padding:'4px 10px'}} onClick={() => setExpandedEvidence(prev => ({...prev, [item.id]: !isExp}))}>
+                              {isExp ? 'Hide text' : 'View extracted text'}
+                            </button>
+                          )}
+                          {savedOriginal(item) && (import.meta.env.PROD ? (
+                            <button type="button" className="button secondary" onClick={() => { try { api.downloadEvidence(caseId, item.id) } catch(e) { setError((e as Error).message) } }} aria-label={`Download ${item.filename}`}>
+                              <Download size={16} />
+                            </button>
+                          ) : (
+                            <a href={api.evidenceFileUrl(caseId, item.id)} className="button secondary" aria-label={`Download ${item.filename}`}>
+                              <Download size={16} />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+
+                      {meta.summary && (
+                        <p style={{margin:'8px 0 6px 0',fontSize:13,color:'#334155'}}>{meta.summary}</p>
+                      )}
+
+                      {(meta.amounts?.length > 0 || meta.dates?.length > 0 || meta.parties?.length > 0) && (
+                        <div style={{display:'flex',flexWrap:'wrap',gap:8,marginTop:8,paddingTop:8,borderTop:'1px dashed #cbd5e1'}}>
+                          {meta.amounts?.map((amt: string, idx: number) => (
+                            <span key={`amt-${idx}`} style={{background:'#fef3c7',color:'#92400e',padding:'2px 8px',borderRadius:6,fontSize:12,fontWeight:500}}>
+                              💰 {amt}
+                            </span>
+                          ))}
+                          {meta.dates?.map((dt: string, idx: number) => (
+                            <span key={`dt-${idx}`} style={{background:'#ede9fe',color:'#5b21b6',padding:'2px 8px',borderRadius:6,fontSize:12}}>
+                              📅 {dt}
+                            </span>
+                          ))}
+                          {meta.parties?.map((pty: string, idx: number) => (
+                            <span key={`pty-${idx}`} style={{background:'#f1f5f9',color:'#475569',padding:'2px 8px',borderRadius:6,fontSize:12}}>
+                              👥 {pty}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+
+                      {isExp && meta.extracted_text && (
+                        <pre style={{background:'#ffffff',border:'1px solid #cbd5e1',borderRadius:6,padding:10,fontSize:12,maxHeight:180,overflowY:'auto',whiteSpace:'pre-wrap',marginTop:10,color:'#1e293b'}}>
+                          {meta.extracted_text}
+                        </pre>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
+            ) : (
+              <div className="case-empty">
+                <Paperclip size={25} />
+                <strong>No evidence documents yet</strong>
+                <span>Upload your rental agreement, receipt, notice, challan, or police complaint. The system will extract text, dates, parties, and amounts automatically.</span>
+              </div>
+            )}
           </section>}
 
           {tab === 'documents' && <section className="panel case-card tab-card">

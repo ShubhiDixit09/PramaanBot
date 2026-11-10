@@ -24,6 +24,7 @@ from .schemas import (
     ProcedureStepPatch,
 )
 from .services.drafting import DraftService
+from .services.document_ai import analyze_document_content, extract_text_from_pdf
 from .services.legal_engine import LegalEngine
 from .services.ollama import OllamaClient
 from .services.procedures import ProcedureService
@@ -153,9 +154,15 @@ async def upload_evidence(case_id: str, file: UploadFile = File(...)) -> dict:
     if len(content) > 10 * 1024 * 1024:
         raise HTTPException(status_code=413, detail="Files are limited to 10 MB")
     media_type = file.content_type or "application/octet-stream"
+    filename = Path(file.filename or "evidence").name
     extracted = ""
-    if media_type.startswith("text/") or Path(file.filename or "").suffix.lower() in {".txt", ".md"}:
+    if media_type.startswith("text/") or filename.lower().endswith((".txt", ".md")):
         extracted = content.decode("utf-8", errors="replace")[:50_000]
+    elif "pdf" in media_type or filename.lower().endswith(".pdf"):
+        extracted = extract_text_from_pdf(content)
+    elif media_type.startswith("image/") or filename.lower().endswith((".png", ".jpg", ".jpeg", ".webp")):
+        extracted = f"Image Evidence: {filename} ({len(content)} bytes) - Uploaded for case record."
+
     evidence_id = str(uuid4())
     evidence_directory = settings.evidence_dir / case_id
     evidence_directory.mkdir(parents=True, exist_ok=True)
@@ -167,15 +174,7 @@ async def upload_evidence(case_id: str, file: UploadFile = File(...)) -> dict:
         os.replace(temporary_file, stored_file)
     finally:
         temporary_file.unlink(missing_ok=True)
-    metadata = {
-        "parser": "plain-text" if extracted else "not-extracted",
-        "vision_status": (
-            "Text extracted locally"
-            if extracted
-            else "Original saved locally; text has not been extracted or verified"
-        ),
-        "stored_locally": True,
-    }
+    metadata = analyze_document_content(filename, extracted, media_type)
     try:
         with database.unit_of_work() as connection:
             connection.execute(

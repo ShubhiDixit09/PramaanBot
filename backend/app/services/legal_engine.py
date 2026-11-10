@@ -12,11 +12,15 @@ from .shield import check_input, ensure_disclaimer, verify_output
 
 
 INTENTS = (
-    ("tenancy", "eviction_or_deposit", ("landlord", "tenant", "rent", "evict", "deposit", "मकान", "किराया")),
-    ("consumer", "defective_goods_or_refund", ("consumer", "refund", "product", "service", "warranty")),
-    ("information", "right_to_information", ("rti", "information", "public authority")),
-    ("traffic", "traffic_challan", ("challan", "traffic", "vehicle", "rto", "चालान")),
-    ("criminal", "police_complaint", ("fir", "police", "crime", "threat", "पुलिस", "शिकायत")),
+    ("tenancy", "eviction_or_deposit", ("landlord", "tenant", "rent", "evict", "deposit", "lease", "मकान", "किराया", "पट्टा")),
+    ("consumer", "defective_goods_or_refund", ("consumer", "refund", "product", "service", "warranty", "defective", "airline", "flight", "invoice", "रिपंड", "ग्राहक", "दोष")),
+    ("information", "right_to_information", ("rti", "information", "public authority", "pio", "appeal", "सूचना", "आरटीआई")),
+    ("traffic", "traffic_challan", ("challan", "traffic", "vehicle", "rto", "license", "helmet", "insurance", "चालान")),
+    ("criminal", "police_complaint", ("fir", "police", "crime", "threat", "assault", "stalking", "theft", "intimidation", "पुलिस", "शिकायत", "धमकी")),
+    ("financial", "cheque_bounce", ("cheque", "check", "bounce", "dishonour", "138", "insufficient funds", "चेक")),
+    ("cyber", "online_fraud", ("cyber", "scam", "upi", "phishing", "otp", "hacked", "identity theft", "साइबर", "धोखा")),
+    ("labour", "unpaid_wages", ("salary", "wages", "unpaid", "employer", "gratuity", "retrenchment", "वेतन", "सैलरी")),
+    ("family", "domestic_violence", ("domestic violence", "maintenance", "residence order", "cruelty", "घरेलू हिंसा")),
 )
 
 
@@ -248,6 +252,26 @@ LOCAL LEGAL CONTEXT:
                 "Write a factual chronology without speculation.",
                 "Preserve evidence and obtain acknowledgement of the complaint.",
                 "For immediate danger, contact local emergency services.",
+            ],
+            "financial": [
+                "Issue a formal demand notice under Section 138 of the Negotiable Instruments Act within 30 days of cheque dishonour.",
+                "Give the drawer 15 days from notice receipt to make payment.",
+                "File a complaint before the Judicial Magistrate within 30 days if the amount remains unpaid.",
+            ],
+            "cyber": [
+                "Report immediately on the National Cyber Crime Portal (cybercrime.gov.in) or call helpline 1930.",
+                "Preserve all transaction receipts, SMS alerts, UPI reference IDs, and chat screenshots.",
+                "Notify your bank immediately in writing to freeze unauthorized debit transfers.",
+            ],
+            "labour": [
+                "Send a formal written demand to the employer requesting the itemised settlement of unpaid wages.",
+                "Compile employment contracts, pay slips, attendance records, and bank statements.",
+                "File an application before the Labour Commissioner / Authority under the Payment of Wages Act.",
+            ],
+            "family": [
+                "Approach the local Protection Officer or Judicial Magistrate for urgent protection and residence orders.",
+                "Preserve medical records, witness statements, and relevant communication records.",
+                "Contact the District Legal Services Authority (DLSA) for free legal assistance.",
             ],
         }
         return common + by_domain.get(
