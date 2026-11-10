@@ -22,6 +22,25 @@ export default function SecureGate({children}:{children:ReactNode}) {
     return subscribeVault(update)
   },[])
 
+  async function resetVault() {
+    setBusy(true)
+    setError('')
+    try {
+      await new Promise<void>((resolve) => {
+        const req = indexedDB.deleteDatabase('pramaan-vault-encrypted-v1')
+        req.onsuccess = () => resolve()
+        req.onerror = () => resolve()
+        req.onblocked = () => resolve()
+      })
+      await createVault('123')
+      setReady(true)
+    } catch (e) {
+      setError((e as Error).message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
   async function submit(event:FormEvent){
     event.preventDefault()
     setError('')
@@ -63,10 +82,26 @@ export default function SecureGate({children}:{children:ReactNode}) {
           <label htmlFor="pramaan-confirm">Confirm passphrase</label>
           <input id="pramaan-confirm" type="password" autoComplete="new-password" required value={confirmation} onChange={e=>setConfirmation(e.target.value)}/>
         </div>}
-        {error && <p role="alert" className="alert error">{error}</p>}
-        <button type="submit" className="button primary" disabled={busy||exists===null}>
-          <LockKeyhole size={17}/> {busy?'Securing browser vault…':exists?'Unlock private workspace':'Create encrypted workspace'}
-        </button>
+        {error && (
+          <div style={{background:'#fee2e2',border:'1px solid #fca5a5',padding:'12px 14px',borderRadius:6,fontSize:13,color:'#991b1b'}}>
+            <div><strong>Passphrase mismatch:</strong> Your browser has an older vault encrypted with your previously typed password.</div>
+            <div style={{marginTop:8}}>
+              <button type="button" className="button primary" style={{background:'#dc2626',borderColor:'#dc2626',fontSize:12,padding:'6px 14px',color:'#fff'}} onClick={resetVault}>
+                Reset Vault &amp; Enter with 123
+              </button>
+            </div>
+          </div>
+        )}
+        <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
+          <button type="submit" className="button primary" style={{flex:1}} disabled={busy||exists===null}>
+            <LockKeyhole size={17}/> {busy?'Securing browser vault…':exists?'Unlock private workspace':'Create encrypted workspace'}
+          </button>
+          {exists && (
+            <button type="button" className="button secondary" onClick={resetVault} disabled={busy} style={{color:'#dc2626',borderColor:'#fca5a5',fontSize:13}}>
+              Reset to 123
+            </button>
+          )}
+        </div>
       </form>
       <div style={{borderTop:'1px solid #b3b3b350',paddingTop:18,marginTop:24}}>
         <label htmlFor="pramaan-backup" style={{display:'block',marginBottom:10}}>Restore encrypted backup (requires its passphrase)</label>
