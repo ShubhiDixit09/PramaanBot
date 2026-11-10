@@ -68,12 +68,14 @@ export default function SecureGate({children}:{children:ReactNode}) {
   }
 
   if(!ready) return (
-    <section className="panel" style={{maxWidth:640,margin:'3rem auto',padding:'2rem'}}>
+    <section className="panel vault-gate-panel">
       <span className="eyebrow">ENCRYPTED CASE WORKSPACE · LOCAL DEVICE ONLY</span>
-      <h1><LockKeyhole size={28} style={{verticalAlign:'middle',marginRight:10}}/> {exists?'Unlock your private case vault':'Create a private case vault'}</h1>
-      <p>Your case records, uploaded evidence, drafts and progress are encrypted on this device with AES-256-GCM. Your passphrase never leaves this browser.</p>
-      <p><strong>Important:</strong> This is not a cloud account. If you clear site data or lose your passphrase and backup, case files cannot be recovered. Other devices do not automatically sync.</p>
-      <form onSubmit={submit} className="form-panel" style={{display:'grid',gap:16}}>
+      <h2 className="vault-title"><LockKeyhole size={20} /> {exists ? 'Unlock your private case vault' : 'Create a private case vault'}</h2>
+      <p className="vault-desc">Your case records, uploaded evidence, drafts and progress are encrypted on this device with AES-256-GCM. Your passphrase never leaves this browser.</p>
+      <div className="vault-notice">
+        <strong>Important:</strong> This is not a cloud account. If you clear site data or lose your passphrase and backup, case files cannot be recovered. Other devices do not automatically sync.
+      </div>
+      <form onSubmit={submit} className="form-panel" style={{display:'grid',gap:14,marginTop:16}}>
         <div className="field">
           <label htmlFor="pramaan-vault-password">Vault passphrase (e.g. 123)</label>
           <input id="pramaan-vault-password" type="password" autoComplete={exists?'current-password':'new-password'} required value={password} onChange={e=>setPassword(e.target.value)}/>
@@ -83,7 +85,7 @@ export default function SecureGate({children}:{children:ReactNode}) {
           <input id="pramaan-confirm" type="password" autoComplete="new-password" required value={confirmation} onChange={e=>setConfirmation(e.target.value)}/>
         </div>}
         {error && (
-          <div style={{background:'#fee2e2',border:'1px solid #fca5a5',padding:'12px 14px',borderRadius:6,fontSize:13,color:'#991b1b'}}>
+          <div className="vault-error-box">
             <div><strong>Passphrase mismatch:</strong> Your browser has an older vault encrypted with your previously typed password.</div>
             <div style={{marginTop:8}}>
               <button type="button" className="button primary" style={{background:'#dc2626',borderColor:'#dc2626',fontSize:12,padding:'6px 14px',color:'#fff'}} onClick={resetVault}>
@@ -92,9 +94,9 @@ export default function SecureGate({children}:{children:ReactNode}) {
             </div>
           </div>
         )}
-        <div style={{display:'flex',gap:10,flexWrap:'wrap'}}>
+        <div style={{display:'flex',gap:10,flexWrap:'wrap',marginTop:6}}>
           <button type="submit" className="button primary" style={{flex:1}} disabled={busy||exists===null}>
-            <LockKeyhole size={17}/> {busy?'Securing browser vault…':exists?'Unlock private workspace':'Create encrypted workspace'}
+            <LockKeyhole size={16}/> {busy?'Securing browser vault…':exists?'Unlock private workspace':'Create encrypted workspace'}
           </button>
           {exists && (
             <button type="button" className="button secondary" onClick={resetVault} disabled={busy} style={{color:'#dc2626',borderColor:'#fca5a5',fontSize:13}}>
@@ -103,10 +105,10 @@ export default function SecureGate({children}:{children:ReactNode}) {
           )}
         </div>
       </form>
-      <div style={{borderTop:'1px solid #b3b3b350',paddingTop:18,marginTop:24}}>
-        <label htmlFor="pramaan-backup" style={{display:'block',marginBottom:10}}>Restore encrypted backup (requires its passphrase)</label>
-        <input id="pramaan-backup" type="file" accept=".json,application/json" disabled={busy} onChange={e=>{void restore(e.target.files?.[0]||null);e.target.value=''}}/>
-        <p style={{marginTop:10,fontSize:13}}>Do not put evidence or case details into the public research search or AI assistant.</p>
+      <div className="vault-backup-section">
+        <label htmlFor="pramaan-backup" style={{display:'block',marginBottom:8,fontSize:12,fontWeight:600,color:'#334155'}}>Restore encrypted backup (requires its passphrase)</label>
+        <input id="pramaan-backup" type="file" accept=".json,application/json" disabled={busy} onChange={e=>{void restore(e.target.files?.[0]||null);e.target.value=''}} style={{fontSize:12}}/>
+        <p style={{marginTop:8,fontSize:12,color:'#64748b'}}>Do not put evidence or case details into the public research search or AI assistant.</p>
       </div>
     </section>
   )

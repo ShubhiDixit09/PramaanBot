@@ -70,63 +70,71 @@ export default function App() {
       <a className="skip-link" href="#main-content">Skip to main content</a>
       <header className="site-header">
         <div className="civic-ribbon">
-          <div className="civic-ribbon-inner">
+          <div className="site-container civic-ribbon-inner">
             <span className="civic-label"><Landmark size={14} /> <span lang="hi">डिजिटल विधिक सेवा</span><i /> Digital Legal Services</span>
             <span className="prototype-mark">Public-service prototype</span>
             <span className="civic-tools"><Languages size={14} /> English&nbsp;&nbsp;|&nbsp;&nbsp;<span lang="hi">हिन्दी</span> <Accessibility size={14} /> Accessibility</span>
           </div>
         </div>
-        <div className="masthead">
-          <Link className="header-brand" to="/" aria-label="PramaanBot (प्रमाणबॉट) dashboard">
-            <span className="header-brand-mark"><Scale size={29} strokeWidth={1.35} /></span>
-            <span className="header-brand-copy">
-              <span className="brand-name-row">
-                <strong>PramaanBot</strong>
-                <span className="brand-name-divider" aria-hidden="true">|</span>
-                <strong className="brand-name-hindi" lang="hi">प्रमाणबॉट</strong>
+        <div className="masthead-brand-bar">
+          <div className="site-container masthead-brand-inner">
+            <Link className="header-brand" to="/" aria-label="PramaanBot (प्रमाणबॉट) dashboard">
+              <span className="header-brand-mark"><Scale size={24} strokeWidth={1.5} /></span>
+              <span className="header-brand-copy">
+                <span className="brand-name-row">
+                  <strong>PramaanBot</strong>
+                  <span className="brand-name-divider" aria-hidden="true">|</span>
+                  <strong className="brand-name-hindi" lang="hi">प्रमाणबॉट</strong>
+                </span>
+                <small>Citizen Legal Assistance Platform</small>
               </span>
-              <small>Citizen Legal Assistance Platform</small>
-            </span>
-          </Link>
-          <nav className="primary-nav" aria-label="Primary navigation">
-            {navigation.map(({ to, label }) => (
-              <NavLink
-                key={to}
-                to={to}
-                end={to === '/'}
-                className={({ isActive }) => (isActive ? 'active' : '')}
-              >
-                <span>{label}</span>
-              </NavLink>
-            ))}
-          </nav>
-          <div className="header-actions">
-            <span className="header-privacy" title={import.meta.env.DEV ? "Case data remains on your local backend" : "Public demonstration — configure a secure backend before handling case data"}>
-              <ShieldCheck size={17} />
-              {import.meta.env.DEV ? 'Local & secure' : 'Encrypted on this device'}
-            </span>
+            </Link>
+            <div className="header-actions">
+              <span className="header-privacy" title={import.meta.env.DEV ? "Case data remains on your local backend" : "Public demonstration — configure a secure backend before handling case data"}>
+                <ShieldCheck size={16} />
+                {import.meta.env.DEV ? 'Local & secure' : 'Encrypted on this device'}
+              </span>
+            </div>
+          </div>
+        </div>
+        <div className="primary-nav-bar">
+          <div className="site-container primary-nav-inner">
+            <nav className="primary-nav" aria-label="Primary navigation">
+              {navigation.map(({ to, label }) => (
+                <NavLink
+                  key={to}
+                  to={to}
+                  end={to === '/'}
+                  className={({ isActive }) => (isActive ? 'active' : '')}
+                >
+                  <span>{label}</span>
+                </NavLink>
+              ))}
+            </nav>
           </div>
         </div>
         <div className="context-strip">
-          <div className="breadcrumb">
-            <Link to="/"><Home size={17} /> <span>{isPublicDemo ? "Public research" : "My cases"}</span></Link>
-            <span className="breadcrumb-slash">/</span>
-            <strong>{currentPage}</strong>
-          </div>
-          <div className="status-cluster">
-            <span className={`status-dot ${health}`} />
-            <span>{health === 'online' ? (isPublicDemo ? 'Public legal research online' : 'API connected') : health === 'offline' ? 'Research API offline' : 'Checking API'}</span>
-            <span className="divider" />
-            <CircleGauge size={16} />
-            <span>{ollama ? 'Gemma connected' : isPublicDemo ? (aiReady ? 'Optional Gemini assistant' : 'Offline source analysis') : 'Safe fallback mode'}</span>
+          <div className="site-container context-strip-inner">
+            <div className="breadcrumb">
+              <Link to="/"><Home size={15} /> <span>{isPublicDemo ? "Public research" : "My cases"}</span></Link>
+              <span className="breadcrumb-slash">/</span>
+              <strong>{currentPage}</strong>
+            </div>
+            <div className="status-cluster">
+              <span className={`status-dot ${health}`} />
+              <span>{health === 'online' ? (isPublicDemo ? 'Public legal research online' : 'API connected') : health === 'offline' ? 'Research API offline' : 'Checking API'}</span>
+              <span className="divider" />
+              <CircleGauge size={15} />
+              <span>{ollama ? 'Gemma connected' : isPublicDemo ? (aiReady ? 'Optional Gemini assistant' : 'Offline source analysis') : 'Safe fallback mode'}</span>
+            </div>
           </div>
         </div>
       </header>
       <div className="main-column">
-        <main id="main-content">
+        <main id="main-content" className="site-container">
           {isPublicDemo && location.pathname === '/research' && (
-            <div role="status" style={{ margin: '1rem 1.5rem', padding: '1rem', border: '1px solid #a87e39', borderRadius: '0.5rem' }}>
-              Public source search: results come from a small curated corpus. Case files, evidence and drafts use a separate password-encrypted browser vault.
+            <div className="civic-notice-banner" role="status">
+              <strong>Public source search:</strong> Results come from a small curated corpus. Case files, evidence and drafts use a separate password-encrypted browser vault.
               Google Gemini is called only after a specific consent action with a generic question. Never enter private case details into public search.
               {health === 'offline' ? ' The research API is currently unavailable.' : ''}
             </div>
@@ -158,16 +166,18 @@ export default function App() {
           )}
         </main>
         <footer className="site-footer">
-          <div className="footer-identity">
-            <Scale size={25} />
-            <div><strong>PramaanBot</strong><span>Digital public legal services prototype</span></div>
+          <div className="site-container site-footer-inner">
+            <div className="footer-identity">
+              <Scale size={24} />
+              <div><strong>PramaanBot</strong><span>Digital public legal services prototype</span></div>
+            </div>
+            <div className="footer-links">
+              <Link to={isPublicDemo ? "/research" : "/trust"}>{isPublicDemo ? "Legal sources" : "Trust & verification"}</Link>
+              <Link to="/research">Legal sources</Link>
+              <span>Legal information, not legal advice</span>
+            </div>
+            <div className="footer-status"><ShieldCheck size={15} /> {import.meta.env.DEV ? "Local data stays on your computer" : "Case files and evidence remain encrypted in this browser"}</div>
           </div>
-          <div className="footer-links">
-            <Link to={isPublicDemo ? "/research" : "/trust"}>{isPublicDemo ? "Legal sources" : "Trust & verification"}</Link>
-            <Link to="/research">Legal sources</Link>
-            <span>Legal information, not legal advice</span>
-          </div>
-          <div className="footer-status"><ShieldCheck size={16} /> {import.meta.env.DEV ? "Local data stays on your computer" : "Case files and evidence remain encrypted in this browser"}</div>
         </footer>
       </div>
     </div>
