@@ -154,7 +154,7 @@ export function subscribeVault(listener: () => void): () => void {
   return () => window.removeEventListener('pramaan-vault-changed', listener)
 }
 export async function createVault(password: string): Promise<void> {
-  if (password.length < 12) throw new Error('Choose a passphrase of at least 12 characters.')
+  if (!password) throw new Error('Passphrase cannot be empty.')
   if (await vaultExists()) throw new Error('A vault already exists. Unlock it or import a backup.')
   const nextSalt = crypto.getRandomValues(new Uint8Array(16))
   const nextKey = await derive(password, nextSalt)

@@ -8,8 +8,8 @@ import {
 export default function SecureGate({children}:{children:ReactNode}) {
   const [ready,setReady]=useState(isVaultUnlocked())
   const [exists,setExists]=useState<boolean|null>(null)
-  const [password,setPassword]=useState('')
-  const [confirmation,setConfirmation]=useState('')
+  const [password,setPassword]=useState('123')
+  const [confirmation,setConfirmation]=useState('123')
   const [error,setError]=useState('')
   const [busy,setBusy]=useState(false)
 
@@ -56,12 +56,12 @@ export default function SecureGate({children}:{children:ReactNode}) {
       <p><strong>Important:</strong> This is not a cloud account. If you clear site data or lose your passphrase and backup, case files cannot be recovered. Other devices do not automatically sync.</p>
       <form onSubmit={submit} className="form-panel" style={{display:'grid',gap:16}}>
         <div className="field">
-          <label htmlFor="pramaan-vault-password">Vault passphrase (12+ characters)</label>
-          <input id="pramaan-vault-password" type="password" autoComplete={exists?'current-password':'new-password'} minLength={12} required value={password} onChange={e=>setPassword(e.target.value)}/>
+          <label htmlFor="pramaan-vault-password">Vault passphrase (e.g. 123)</label>
+          <input id="pramaan-vault-password" type="password" autoComplete={exists?'current-password':'new-password'} required value={password} onChange={e=>setPassword(e.target.value)}/>
         </div>
         {!exists && <div className="field">
           <label htmlFor="pramaan-confirm">Confirm passphrase</label>
-          <input id="pramaan-confirm" type="password" autoComplete="new-password" minLength={12} required value={confirmation} onChange={e=>setConfirmation(e.target.value)}/>
+          <input id="pramaan-confirm" type="password" autoComplete="new-password" required value={confirmation} onChange={e=>setConfirmation(e.target.value)}/>
         </div>}
         {error && <p role="alert" className="alert error">{error}</p>}
         <button type="submit" className="button primary" disabled={busy||exists===null}>
