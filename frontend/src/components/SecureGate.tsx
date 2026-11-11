@@ -114,15 +114,7 @@ export default function SecureGate({children}:{children:ReactNode}) {
   )
 
   return <>
-    <div className="panel" role="status" style={{display:'flex',gap:12,alignItems:'center',justifyContent:'space-between',flexWrap:'wrap',margin:'1rem 1.5rem',padding:14}}>
-      <div><ShieldCheck size={19} style={{verticalAlign:'middle',marginRight:7}}/><strong>Private vault unlocked</strong>
-      <div style={{fontSize:12}}>Encrypted IndexedDB on this browser. No cloud case sync. Back up regularly.</div></div>
-      <div style={{display:'flex',gap:8}}>
-        <button type="button" className="button secondary" onClick={()=>void exportEncryptedBackup().catch(e=>setError((e as Error).message))}><Download size={16}/> Backup</button>
-        <button type="button" className="button secondary" onClick={lockVault}><LockKeyhole size={16}/> Lock</button>
-      </div>
-    </div>
-    {error&&<div role="alert" className="alert error" style={{margin:'0 1.5rem'}}>{error}</div>}
+    {error && <div role="alert" className="alert error">{error}</div>}
     {children}
   </>
 }

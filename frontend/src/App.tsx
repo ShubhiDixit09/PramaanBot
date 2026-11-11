@@ -2,15 +2,22 @@ import SecureGate from './components/SecureGate'
 import {
   Accessibility,
   CircleGauge,
-  Home,
+  Download,
   Landmark,
   Languages,
+  LockKeyhole,
   Scale,
   ShieldCheck,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { Link, NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import { api } from './api'
+import {
+  exportEncryptedBackup,
+  isVaultUnlocked,
+  lockVault,
+  subscribeVault,
+} from './secureVault'
 import Dashboard from './pages/Dashboard'
 import Drafts from './pages/Drafts'
 import NewCase from './pages/NewCase'
@@ -29,30 +36,19 @@ const navigation = [
   { to: '/trust', label: 'Verification' },
 ]
 
-function PublicLanding() {
-  return (
-    <section className="dashboard-hero" aria-labelledby="public-title">
-      <div className="dashboard-hero-copy">
-        <div className="dashboard-hero-topline"><span>PRAMAANBOT / PUBLIC RESEARCH</span><span>READ · VERIFY · LEARN</span></div>
-        <h1 id="public-title">Explore Indian law<br /><em>with sources.</em></h1>
-        <p>Search the project's small curated set of legal provisions and review public action guides. This preview uses real source ranking, not a generative AI model or an authenticated case-management backend.</p>
-        <div className="dashboard-hero-actions">
-          <Link className="hero-start" to="/research">Search legal sources</Link>
-          <Link className="hero-research" to="/procedures">View action guides</Link>
-        </div>
-        <p>Informational prototype only. Do not enter names, case details, identity numbers, or other confidential information. The public site does not store private case files.</p>
-      </div>
-    </section>
-  )
-}
-
 export default function App() {
   const [health, setHealth] = useState<'checking' | 'online' | 'offline'>('checking')
   const [ollama, setOllama] = useState(false)
   const [aiReady, setAiReady] = useState(false)
+  const [vaultUnlocked, setVaultUnlocked] = useState(isVaultUnlocked())
   const location = useLocation()
   const isPublicDemo = import.meta.env.PROD
-  const currentPage = navigation.find((item) => item.to !== '/' && location.pathname.startsWith(item.to))?.label || (location.pathname.startsWith('/workspace') ? 'Case workspace' : 'Overview')
+
+  useEffect(() => {
+    const updateVault = () => setVaultUnlocked(isVaultUnlocked())
+    updateVault()
+    return subscribeVault(updateVault)
+  }, [])
 
   useEffect(() => {
     api
@@ -71,34 +67,32 @@ export default function App() {
       <header className="site-header">
         <div className="civic-ribbon">
           <div className="site-container civic-ribbon-inner">
-            <span className="civic-label"><Landmark size={14} /> <span lang="hi">डिजिटल विधिक सेवा</span><i /> Digital Legal Services</span>
-            <span className="prototype-mark">Public-service prototype</span>
-            <span className="civic-tools"><Languages size={14} /> English&nbsp;&nbsp;|&nbsp;&nbsp;<span lang="hi">हिन्दी</span> <Accessibility size={14} /> Accessibility</span>
+            <span className="civic-label">
+              <Landmark size={13} />
+              <span lang="hi">डिजिटल विधिक सेवा</span>
+              <i>|</i>
+              <span>Digital Legal Services</span>
+              <span className="prototype-mark">Prototype</span>
+            </span>
+            <span className="civic-tools">
+              <Languages size={13} /> English&nbsp;|&nbsp;<span lang="hi">हिन्दी</span>
+              <Accessibility size={13} /> Accessibility
+            </span>
           </div>
         </div>
-        <div className="masthead-brand-bar">
-          <div className="site-container masthead-brand-inner">
-            <Link className="header-brand" to="/" aria-label="PramaanBot (प्रमाणबॉट) dashboard">
-              <span className="header-brand-mark"><Scale size={24} strokeWidth={1.5} /></span>
-              <span className="header-brand-copy">
+        <div className="main-navbar">
+          <div className="site-container navbar-inner">
+            <Link className="header-brand" to="/" aria-label="PramaanBot dashboard">
+              <span className="header-brand-mark"><Scale size={18} strokeWidth={1.75} /></span>
+              <div className="header-brand-copy">
                 <span className="brand-name-row">
                   <strong>PramaanBot</strong>
                   <span className="brand-name-divider" aria-hidden="true">|</span>
-                  <strong className="brand-name-hindi" lang="hi">प्रमाणबॉट</strong>
+                  <span className="brand-name-hindi" lang="hi">प्रमाणबॉट</span>
                 </span>
                 <small>Citizen Legal Assistance Platform</small>
-              </span>
+              </div>
             </Link>
-            <div className="header-actions">
-              <span className="header-privacy" title={import.meta.env.DEV ? "Case data remains on your local backend" : "Public demonstration — configure a secure backend before handling case data"}>
-                <ShieldCheck size={16} />
-                {import.meta.env.DEV ? 'Local & secure' : 'Encrypted on this device'}
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="primary-nav-bar">
-          <div className="site-container primary-nav-inner">
             <nav className="primary-nav" aria-label="Primary navigation">
               {navigation.map(({ to, label }) => (
                 <NavLink
@@ -111,21 +105,38 @@ export default function App() {
                 </NavLink>
               ))}
             </nav>
-          </div>
-        </div>
-        <div className="context-strip">
-          <div className="site-container context-strip-inner">
-            <div className="breadcrumb">
-              <Link to="/"><Home size={15} /> <span>{isPublicDemo ? "Public research" : "My cases"}</span></Link>
-              <span className="breadcrumb-slash">/</span>
-              <strong>{currentPage}</strong>
-            </div>
-            <div className="status-cluster">
-              <span className={`status-dot ${health}`} />
-              <span>{health === 'online' ? (isPublicDemo ? 'Public legal research online' : 'API connected') : health === 'offline' ? 'Research API offline' : 'Checking API'}</span>
-              <span className="divider" />
-              <CircleGauge size={15} />
-              <span>{ollama ? 'Gemma connected' : isPublicDemo ? (aiReady ? 'Optional Gemini assistant' : 'Offline source analysis') : 'Safe fallback mode'}</span>
+            <div className="header-actions">
+              <span className={`api-status-pill ${health}`} title={health === 'online' ? 'Public legal research API connected' : 'API offline'}>
+                <span className={`status-dot ${health}`} />
+                <span>{health === 'online' ? 'Online' : 'Offline'}</span>
+              </span>
+              {vaultUnlocked ? (
+                <div className="header-vault-group">
+                  <span className="header-vault-status active" title="Browser vault encrypted with AES-256-GCM">
+                    <ShieldCheck size={13} /> Vault Active
+                  </span>
+                  <button
+                    type="button"
+                    className="header-mini-btn"
+                    onClick={() => void exportEncryptedBackup()}
+                    title="Download encrypted backup"
+                  >
+                    <Download size={12} /> Backup
+                  </button>
+                  <button
+                    type="button"
+                    className="header-mini-btn danger"
+                    onClick={lockVault}
+                    title="Lock vault"
+                  >
+                    <LockKeyhole size={12} /> Lock
+                  </button>
+                </div>
+              ) : (
+                <span className="header-vault-status locked" title="Encrypted on this device">
+                  <LockKeyhole size={12} /> Vault Locked
+                </span>
+              )}
             </div>
           </div>
         </div>

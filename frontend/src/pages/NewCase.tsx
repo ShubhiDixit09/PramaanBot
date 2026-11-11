@@ -50,16 +50,18 @@ export default function NewCase() {
   return (
     <>
       <PageHeader
-        eyebrow="New matter"
+        eyebrow="Case intake · New matter"
         title="Tell us what happened."
-        description="Use your own words—in English, Hindi, or Hinglish. You do not need to know legal terms."
+        description="Use your own words in English, Hindi, or Hinglish. No legal terminology required."
+        action={
+          <button className="button secondary" type="button" onClick={() => setForm(depositExample)} style={{fontSize:12,height:32}}>
+            Load deposit dispute example
+          </button>
+        }
       />
       {error && <ErrorBanner message={error} />}
       <form className="form-layout" onSubmit={submit}>
         <div className="panel form-panel">
-          <button className="example-link" type="button" onClick={() => setForm(depositExample)}>
-            Load landlord deposit example
-          </button>
           <div className="field">
             <label htmlFor="title">Short case title</label>
             <input
@@ -67,23 +69,25 @@ export default function NewCase() {
               required
               minLength={3}
               maxLength={160}
-              placeholder="e.g. Landlord kept my security deposit"
+              placeholder="e.g. Landlord refusing to return security deposit"
               value={form.title}
               onChange={(event) => setForm({ ...form, title: event.target.value })}
             />
           </div>
           <div className="field">
-            <label htmlFor="description">What happened?</label>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'baseline'}}>
+              <label htmlFor="description">What happened?</label>
+              <small style={{fontSize:11,color:'#64748b'}}>{form.description.length}/10,000 characters</small>
+            </div>
             <textarea
               id="description"
               required
               minLength={10}
-              rows={8}
-              placeholder="Dates, people involved, what you have already tried, and what outcome you need…"
+              rows={5}
+              placeholder="Dates, parties involved, what you agreed on, and what outcome you are seeking…"
               value={form.description}
               onChange={(event) => setForm({ ...form, description: event.target.value })}
             />
-            <small>{form.description.length}/10,000 characters</small>
           </div>
           <div className="field-grid">
             <div className="field">
@@ -123,13 +127,25 @@ export default function NewCase() {
               </select>
             </div>
           </div>
-          <button className="button primary wide" disabled={busy}>
-            {busy ? 'Creating encrypted case…' : 'Create case workspace'} <ArrowRight size={18} />
+          <button className="button primary wide" disabled={busy} style={{marginTop:6}}>
+            {busy ? 'Creating encrypted case…' : 'Create case workspace'} <ArrowRight size={16} />
           </button>
         </div>
         <aside className="form-aside">
-          <div className="aside-card"><LockKeyhole size={21} /><div><strong>Stored locally</strong><span>{import.meta.env.PROD ? 'Your facts are encrypted in IndexedDB in this browser; they never go to a public case API.' : 'Your facts are written to the SQLite database on this machine.'}</span></div></div>
-          <div className="aside-card"><MessageSquareText size={21} /><div><strong>Plain language works</strong><span>“Landlord deposit nahi de raha” is enough to begin.</span></div></div>
+          <div className="aside-card">
+            <LockKeyhole size={18} />
+            <div>
+              <strong>Stored locally &amp; encrypted</strong>
+              <span>{import.meta.env.PROD ? 'Your case facts are encrypted with AES-256-GCM in IndexedDB and never sent to a cloud case database.' : 'Your facts are saved directly to your local database.'}</span>
+            </div>
+          </div>
+          <div className="aside-card">
+            <MessageSquareText size={18} />
+            <div>
+              <strong>Everyday language works</strong>
+              <span>“Landlord deposit nahi de raha” is enough. The legal engine identifies the applicable Acts and provisions automatically.</span>
+            </div>
+          </div>
         </aside>
       </form>
     </>
