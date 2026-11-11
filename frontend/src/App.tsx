@@ -72,7 +72,6 @@ export default function App() {
               <span lang="hi">डिजिटल विधिक सेवा</span>
               <i>|</i>
               <span>Digital Legal Services</span>
-              <span className="prototype-mark">Prototype</span>
             </span>
             <span className="civic-tools">
               <Languages size={13} /> English&nbsp;|&nbsp;<span lang="hi">हिन्दी</span>
@@ -180,7 +179,7 @@ export default function App() {
           <div className="site-container site-footer-inner">
             <div className="footer-identity">
               <Scale size={24} />
-              <div><strong>PramaanBot</strong><span>Digital public legal services prototype</span></div>
+              <div><strong>PramaanBot</strong><span>Citizen Legal Assistance Platform</span></div>
             </div>
             <div className="footer-links">
               <Link to={isPublicDemo ? "/research" : "/trust"}>{isPublicDemo ? "Legal sources" : "Trust & verification"}</Link>
